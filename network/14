@@ -1,0 +1,4 @@
+# Quel est le fichier contenant les entrees locales DNS ?
+/etc/hosts 
+# cat /etc/hosts | grep localhost
+

@@ -1,0 +1,3 @@
+# Quelle commande permet d'afficher l'espace disponible et utilise sur le systeme d'une maniere humainement lisible ?
+df -h
+

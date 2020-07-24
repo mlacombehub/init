@@ -1,0 +1,3 @@
+# Identifiez l'IP du serveur DNS qui repond sur le domaine suivant : slash16.org
+dig slash16.org | grep SERVER | awk '{print $3}' | awk -F '[()]' '{print $2}'
+

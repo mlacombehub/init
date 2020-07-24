@@ -1,0 +1,3 @@
+# Recuperez le path complet du fichier dans lequel est ecrit l'adresse IP du serveur DNS que vous utilisez
+cat -e /var/run/resolv.conf | grep nameserver
+

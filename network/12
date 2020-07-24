@@ -1,0 +1,3 @@
+# Trouvez l'IP qui vous a ete assignee par le serveur dhcp
+ipconfig getpacket en0 | grep server_identifier
+

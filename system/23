@@ -1,0 +1,7 @@
+# Expliquez comment se connecter en tant que nouvel utilisateur. (en session graphique et en session ssh)
+# 
+# Sous session ssh : on cree un nouvel utilisateur,
+# on va sur le terminal destine a la communication,
+# on fait ssh -p valeur_du_port user@localhost,
+# dans notre cas : ssh -p 2222 user@localhost
+

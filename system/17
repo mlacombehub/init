@@ -1,0 +1,4 @@
+# Trouvez une commande qui, en parallele de la session graphique permet de se connecter en ssh sur la machine
+# on lance ssh user@localhost
+ssh mlacombe@localhost
+

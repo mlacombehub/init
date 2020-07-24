@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Calcul d'equation du second degre (A^2 + B + C = 0) :
+# Pour resoudre l'equation, on utilise la formule x = ( -B +/- sqrt( B^2 - 4AC ) ) / 2A)
+
+echo -e "\n\033[32m-------Ouverture de l'application--------\033[0m\n"
+
+echo -e "Bonjour, vous avez choisi d executer un logiciel de resolution d equations du second degre : Ax^2 + Bx + C = 0\n"
+echo -e "Verification de l'installation du paquet bc, \033[31msi le paquet n'est pas present, il sera installe.\033[0m\n"
+
+read -p "Etes vous sur/sure de vouloir continuer et installer le paquet bc ? [O/n] : " reponse
+
+if [ "$reponse" = "O" -o "$reponse" = "o" -o "$reponse" = "" ];
+then
+	echo -e "\nlancement de la procedure de verification des paquets, sinon installation\n"
+	apt-get install bc
+
+# On verifie si le binaire de calcul bc est installe parmis les packages de la machine
+	echo -e "\n\033[32mTous les paquets sont ou ont ete installes.\033[0m"
+	echo -e "Merci de bien vouloir entrer les parametres A, B et C trois entiers reels avec une precision de 0.01, ne pas envoyer de prompt nul"
+	
+# Ecriture du prompt
+	read -p 'A= ? : ' A
+	read -p 'B= ? : ' B
+	read -p 'C= ? : ' C
+
+#on ecrit D le discriminant qui va tester si l'equation a une solution
+	D=$(echo "$B^2-4*$A*$C" | bc -l)
+	echo -e "\nDiscriminant= $D"
+
+	if [ $(echo "$D < 0" | bc -l) -eq 1 ]
+	then
+		echo -e "\n\033[32mL'equation n'a pas de solution dans l'ensemble des reels\033[0m"
+
+	elif [ $(echo "$D == 0" | bc -l) -eq 1 ]
+	then
+		echo -e "\n\033[32mL'equation a une unique solution :\033[0m"
+		echo -e "\n\033[32mx= \033[0m"$(echo "scale=2;-($B)/(2*$A)" | bc -l)
+
+	elif [ $(echo "$D > 0" | bc -l) -eq 1 ]
+	then
+		echo -e "\n\033[32mL'equation a deux solutions possibles :\033[0m"
+		echo -e "\n\033[32mx1 = \033[0m"$(echo "scale=2; (-($B)+sqrt($D))/(2*$A)" | bc -l)
+		echo -e "\n\033[32mx2 = \033[0m"$(echo "scale=2; (-($B)-sqrt($D))/(2*$A)" | bc -l)
+
+	else
+		echo -e "\n\033[31mVous avez mal saisi les discriminants. Veuillez recommencer\033[0m"
+	fi
+	
+elif [ "$reponse" = "n" -o "$reponse" = "N" ];
+then
+	echo -e "\n\033[31mVous avez choisi de ne pas installer les paquets. L'application n'a donc pas ete lancee.\033[0m"
+
+else
+	echo -e "\n\033[31mVous n'avez pas entre un mot valide, attention a la casse !\033[0m"
+fi
+
+echo -e "\n\033[32m----------Fermeture de l'application----------\033[0m\n"

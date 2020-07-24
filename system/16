@@ -1,0 +1,4 @@
+# Trouvez un service qui permet de lancer des taches a horaires regulieres
+# Les fichiers situes dans /etc sous le nom cron.X permettent de lancer des taches planifiees. Dans le cas d'heures regulieres :
+/etc/cron.d
+

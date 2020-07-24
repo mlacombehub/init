@@ -1,0 +1,3 @@
+# Quelle commande permet de lister tous les packages INSTALLES sur la machine ?
+dpkg --get-selections
+

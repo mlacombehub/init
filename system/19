@@ -1,0 +1,11 @@
+# on trouve les services lances automatiquement en executant la commande : ls -R /etc/rc*/
+# on y trouve :
+rc0.d
+rc1.d
+rc2.d
+rc3.d
+rc4.d
+rc5.d
+rc6.d
+rcS.d
+

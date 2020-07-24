@@ -1,0 +1,8 @@
+# Trouvez chez quel hebergeur est le site de Slash16
+
+whois slash16.org | grep 'Name Server'
+
+# Name server: NS-1236.AWSDNS-26.ORG
+# AWS est une division Amazon specialiste des services de cloud computing
+# On peut donc considerer que l'hebergeur est AWS/AMAZON
+#

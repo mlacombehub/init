@@ -1,0 +1,5 @@
+# Listez tous les utilisateurs existants sur la machine
+# Les utilisateurs systèmes sont ceux employés par des tâches spécifiques (exécution de
+# logiciels ou commandes) régulières qui souvent portent le même nom que l’utilisateur.
+awk -F: '{print $1}' /etc/passwd
+

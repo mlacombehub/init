@@ -1,0 +1,3 @@
+# Donnez une commandequi determine l'etat du service SSH
+/etc/init.d/ssh status
+

@@ -1,0 +1,1 @@
+awk -F: '$3 > 999 {print "login : "$1"\tUID : "$3 "\tPath : "$6}' /etc/passwd

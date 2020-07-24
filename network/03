@@ -1,0 +1,3 @@
+# Identifiez l'adresse MAC de la carte Wi-Fi
+ifconfig en1 ether
+

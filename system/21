@@ -1,0 +1,7 @@
+# Listez tous les utilisateurs reels de la machine
+# Les utilisateurs réels, quant à eux sont associés à des personnes qui se connectent sur
+# la machine soit via une interface graphique ou un accès en ligne de commande (shell)
+# particulier.
+
+awk -F: '$3 > 999 {print $1}' /etc/passwd
+

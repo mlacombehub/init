@@ -1,0 +1,4 @@
+# Quel fichie contient les cles RSA des machines autorisees a se connecter via SSH ?
+/etc/ssh/ssh_host_rsa_key
+# cat /etc/ssh/ssh_host_rsa_key
+
