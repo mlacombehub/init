@@ -1,3 +1,2 @@
 # Récupérez la liste des interfaces réseau de la machine sans afficher aucun détail pour ces interfaces. Vraiment juste la liste des noms.
-ifconfig -a | grep UP | cut -d: -f1
-
+ip a | grep mtu | cut -d: -f2 | cut -d' ' -f2

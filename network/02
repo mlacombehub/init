@@ -1,8 +1,8 @@
 # Identifiez et affichez les caracteristiques de l'interface Ethernet :
 
 # a) Indiquez l'adresse de brodcast
-ifconfig -L en0 inet
+ip address | grep "inet " | grep "brd" | cut -d' ' -f8
 
 # b) Indiquez toutes les adresses IP qui font partie du meme sous-reseau
-arp -a
+/sbin/arp -a
 
